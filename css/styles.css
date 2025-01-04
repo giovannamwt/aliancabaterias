@@ -1,31 +1,29 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/* @media (max-width: 768px) {
+    .map-wrapper iframe {
+        height: 300px;
+    }
+} */
 
-:root{
-    --azulpadrao : #036381;
-    --amarelopadrao : #FEBD59; 
-    --azulbg :#FEF4E5;
 
-    --titulos:'Rubik', serif;
-    --paragrafos:'Noto Serif', serif;
-
+:root {
+    --azulpadrao: #036381;
+    --amarelopadrao: #FEBD59;
+    --azulbg: #FEF4E5;
+    --titulos: 'Rubik', serif;
+    --paragrafos: 'Noto Serif', serif;
     --fonth1: 64px;
-    --fontp : 24px;
+    --fontp: 24px;
     --fontfooter: 16px;
-
-    --sizemax: 1300px
-
-
-  }
+    --sizemax: 1500px;
+}
 
 body {
     color: black;
@@ -40,7 +38,8 @@ body {
     justify-content: center;
     padding: 20px 0;
 }
-main{
+
+main {
     max-width: var(--sizemax);
     margin: auto;
     width: 95%;
@@ -51,65 +50,146 @@ main{
     height: auto;
 }
 
-h1{
+h1 {
     font-family: var(--titulos);
     font-size: var(--fonth1);
     color: var(--azulpadrao);
     letter-spacing: -2px;
 }
-p{
+
+p {
     font-family: var(--paragrafos);
     font-size: var(--fontp);
 }
-span{
+
+span {
     color: var(--amarelopadrao);
     font-size: 80px;
     background-color: var(--azulpadrao);
     padding: 0 20px;
     border-radius: 7px;
-    letter-spacing: 3px ;
-    
+    letter-spacing: 3px;
 }
+
 .intro {
     text-align: start;
     padding: 0px 10px;
     line-height: 80px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-button{
+.intro img{
+    max-width: 550px;
+    width: 100%;
+    display: block;
+}
+
+button {
     background-color: var(--amarelopadrao);
     border-style: none;
     padding: 20px 40px;
     border-radius: 50px;
     font-weight: 800;
 }
-button:hover{
+
+button:hover {
     background-color: #FFD700;
 }
+
 .highlights {
     justify-content: space-around;
     padding: 50px 0px;
+    
 }
-
-#opcoes{
+.highlight-group{
+    display: flex;
+    gap: 5%;
+    margin: 0;
+}
+#opcoes {
+    gap: 2.5%;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 20px;
 }
+
 .highlight {
     text-align: center;
 }
-.highlight img{
-    width: 220px;
+
+.highlight img {
+    width: 100%;
 }
-#hl{
+
+#hl {
     text-align: center;
 }
-/* Container dos produtos */
+
+.slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+   
+  }
+  
+  .slides li {
+    min-width: 100%;
+  }
+  
+  .slides img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+ 
+  .desktop-img {
+    display: none;
+  }
+  
+  .slide button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  button.prev {
+    left: 10px;
+  }
+  
+  button.next {
+    right: 10px;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+
+
+  
 .products {
     text-align: center;
     padding: 20px;
@@ -136,14 +216,12 @@ button:hover{
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
-    font-size: 1.2em;
 }
 
-/* Botão do WhatsApp */
 .btn-whatsapp {
     display: inline-block;
-    background-color: #00425A; 
-    color: #fff; 
+    background-color: #00425A;
+    color: #fff;
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 5px;
@@ -153,46 +231,41 @@ button:hover{
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Efeito Hover no Botão */
 .btn-whatsapp:hover {
-    background-color: #25D366; 
-    transform: scale(1.05); 
+    background-color: #25D366;
+    transform: scale(1.05);
 }
 
-/* Efeito Active no Botão */
 .btn-whatsapp:active {
-    background-color: #00425A; 
-    transform: scale(0.95); 
+    background-color: #00425A;
+    transform: scale(0.95);
 }
-
 
 .product:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
     box-shadow: 0 5px 10px #00425A;
 }
 
-
-/* .testimonials {
+.testimonials {
     padding: 50px 20px;
-    background-color: #E3F2FD;
-} */
+}
 
-/* .testimonials h2 {
+.testimonials h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: #036381;
     text-align: center;
-} */
-/* 
+}
+
 .testimonials blockquote {
     font-style: italic;
     border-left: 4px solid #036381;
     padding-left: 20px;
     margin: 20px auto;
     max-width: 600px;
-} */
+}
 
-.cta{
+.cta {
     background-color: var(--azulpadrao);
     width: 900px;
     border-radius: 24px;
@@ -200,75 +273,88 @@ button:hover{
     padding: 32px;
     display: flex;
     flex-direction: column;
-    gap:24px;
+    gap: 24px;
 }
-.cta h1{
+
+.cta h1 {
     color: white;
     font-size: 32px;
     letter-spacing: 0px;
     text-align: center;
 }
-.cta p{
+
+.cta p {
     color: white;
     text-align: center;
 }
-.cta button{
+
+.cta button {
     width: 30%;
     align-self: center;
-    
 }
-#btnf{
-    color: black;
 
+#btnf {
+    color: black;
 }
-.footer {
-    background-color: #036381;
+
+footer {
+    background-color: var(--azulpadrao);
     color: #FFF;
     text-align: center;
     padding: 20px 0;
     margin-top: 30px;
 }
 
+footer p {
+    font-size: var(--fontfooter);
+}
+
 .carousel {
     position: relative;
     width: 100%;
+    overflow: hidden; 
 }
+
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+    overflow: hidden; /* Impede que o conteúdo ultrapasse o container */
+    width: 50%; /* Garante que a faixa do carrossel respeite o tamanho do container pai */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
+  }
 
 .card {
     width: 300px;
     height: 350px;
     margin: 10px;
     color: #6A6A6A;
-    
     padding: 32px;
     background-color: #FFF;
     border-radius: 16px;
-
     box-shadow: 10px 8px 20px 0px #00000014;
-
     gap: 32px;
     text-align: center;
 }
-.card p{
+
+.carousel .card {
+    max-width: 50%; /* Previne que excedam o container */
+    box-sizing: border-box;
+  }
+
+.card p {
     font-size: 14px;
     font-family: "Inter", serif;
     margin-top: 20px;
 }
-.card h3{
+
+.card h3 {
     font-size: 14px;
     font-family: "Inter", serif;
     font-style: italic;
     margin-top: 20px;
-    
-
-
 }
-.card img{
+
+.card img {
     margin-top: 10px;
 }
 
@@ -288,3 +374,217 @@ button:hover{
 .redes-sociais a:hover {
     color: #FFD700;
 }
+
+#contact {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contacts h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.location {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--azulpadrao);
+    color: rgb(255, 255, 255);
+}
+
+.location h1 {
+    font-size: var(--fonth1);
+    padding: 3px;
+    background: linear-gradient(110deg, #f0f2f5, #e0e4e8);
+    margin-bottom: 1px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 12px;
+    font-family: var(--titulos);
+}
+
+.location p {
+    font-size: var(--fontp);
+    margin-bottom: 20px;
+    font-family: var(--paragrafos);
+}
+
+.map-wrapper {
+    width: 30%;
+    height:100%;
+    min-height: 250px;
+    border-radius: 12px;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    border: none;
+    border-radius: 12px;
+}
+
+i{
+    
+    color: var(--azulpadrao);
+}
+
+.contatos {
+    max-width: 500px;
+}
+
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.banner{
+    width: 900px;
+    border-radius: 18px;
+}
+.floating-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.slide{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-button {
+    background-color: #026383;
+}
+
+.whatsapp-button {
+    background-color: #1DB365;
+}
+
+.phone-button img,
+.whatsapp-button img {
+    width: 50px;
+    height: 50px;
+}
+
+.info a{
+    text-decoration: none;
+    color: var(--azulpadrao);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1px;
+}
+
+.info {
+    border-radius: 12px;
+    padding: 12px;
+    
+    align-items: center;
+
+    color: var(--azulpadrao);
+}
+
+.info:hover {
+    background-color: var(--amarelopadrao);
+}
+
+
+@media (min-width: 768px) {
+    .desktop-img {
+      display: block;
+    }
+  
+    .mobile-img {
+      display: none;
+    }
+
+    .carousel .card {
+        flex: 0 0 calc(100% / 3); /* Mostra 3 cartões lado a lado */
+        max-width: calc(100% / 3);
+      }
+    
+  }
+
+@media (max-width: 480px) {
+    :root {
+        --fonth1: 28px;
+        --fontp: 16px;
+        --fontfooter: 12px;
+        --sizemax: 375px; 
+    }
+    h1 {
+        letter-spacing: -1px;
+    }
+    span{
+        font-size: 30px;
+    }
+    .intro {
+        text-align: center;
+        padding: 20px 40px ;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+   .intro img{
+        /* display: none; */
+        width: 200px;
+        margin-bottom: 20px;
+    } 
+    
+    .highlights img{
+        width: 80%;
+    }
+    .highlight-group{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .highlight{
+        margin-top: 20px;
+    }
+    .products button{
+        padding: 5px 20px 0px;
+    }
+    .cta {
+        width: 90%;
+        border-radius: 16px;
+        margin: auto;
+    }
+    .cta button {
+        width: 80%;
+    }
+    .contacts{
+        margin-top: 20px;
+    }
+    #contact{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .map-wrapper {
+        width: 100%;
+        max-width: 250px;
+        margin: auto;
+
+    }
+    .info p{
+        text-align: center;
+    }
+    footer p {
+        width: 80%;
+        margin: auto;
+    }
+
+}
+
